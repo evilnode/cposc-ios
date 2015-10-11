@@ -1,0 +1,4 @@
+framework module "GMP" {
+    header "GMP.h"
+    export *
+}
