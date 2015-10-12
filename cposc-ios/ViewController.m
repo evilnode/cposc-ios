@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "GMP/GMP.h"
+#import "cposc-api.h"
 
 @interface ViewController ()
 
@@ -17,6 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    //  set up the page view
+    GoGMPSetParam(kGMPDocumentHostName, @"cposc.org");
+    GoGMPSetParam(kGMPDocumentPage, @"/home");
+    GoGMPSetParam(kGMPDocumentTitle, @"App Homepage");
+    GoGMPPageView();
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,4 +32,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)fooTapped:(id)sender {
+    GoGMPSetParam(kGMPEventCategory, @"form-control");
+    GoGMPSetParam(kGMPEventAction, @"button-tap");
+    GoGMPSetParam(kGMPEventLabel, @"foo");
+    GoGMPEvent();
+}
+
+- (IBAction)barTapped:(id)sender {
+    GoGMPSetParam(kGMPEventCategory, @"form-control");
+    GoGMPSetParam(kGMPEventAction, @"button-tap");
+    GoGMPSetParam(kGMPEventLabel, @"bar");
+    GoGMPEvent();
+}
+
+- (IBAction)bazTapped:(id)sender {
+    GoGMPSetParam(kGMPEventCategory, @"form-control");
+    GoGMPSetParam(kGMPEventAction, @"button-tap");
+    GoGMPSetParam(kGMPEventLabel, @"baz");
+    GoGMPEvent();
+}
 @end

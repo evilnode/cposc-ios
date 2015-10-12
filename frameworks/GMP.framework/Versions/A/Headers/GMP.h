@@ -22,4 +22,8 @@ FOUNDATION_EXPORT void GoGMPSetDefaultParam(int key, NSString* value);
 
 FOUNDATION_EXPORT void GoGMPSetParam(int key, NSString* value);
 
+FOUNDATION_EXPORT void GoGMPTestEvent();
+
+FOUNDATION_EXPORT void GoGMPTestPageView();
+
 #endif

@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "GMP/GMP.h"
+#import "cposc-api.h"
+
+#define ENGA_CID_NAME @"ENGA_CLIENT_KEY"
 
 @interface AppDelegate ()
 
@@ -14,9 +18,31 @@
 
 @implementation AppDelegate
 
+- (NSString *) clientToken
+{
+    NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+    NSString *ret = [userdefaults valueForKey:ENGA_CID_NAME];
+    if (ret == nil) {
+        CFUUIDRef uuid = CFUUIDCreate(kCFAllocatorDefault);
+        ret = (__bridge_transfer NSString *)CFUUIDCreateString(kCFAllocatorDefault, uuid);
+        CFRelease(uuid);
+        [userdefaults setValue:ret forKey:ENGA_CID_NAME];
+        [userdefaults synchronize];
+    }
+    return ret;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //  Set client identifier
+    GoGMPSetClientIdentifier([self clientToken]);
+    
+    //  Set default parameters
+    GoGMPSetDefaultParam(kGMPVersion, @"1");
+    GoGMPSetDefaultParam(kGMPTrackingID, @"UA-47031217-3");
+    GoGMPSetDefaultParam(kGMPAppName, @"CPOSC-TEST-APP");
+    
     return YES;
 }
 

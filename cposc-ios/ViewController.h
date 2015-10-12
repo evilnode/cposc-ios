@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+- (IBAction)fooTapped:(id)sender;
+- (IBAction)barTapped:(id)sender;
+- (IBAction)bazTapped:(id)sender;
 
 
 @end

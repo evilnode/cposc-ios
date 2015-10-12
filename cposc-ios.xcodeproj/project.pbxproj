@@ -13,6 +13,7 @@
 		AA3B55561BCB247B004805C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3B55541BCB247B004805C2 /* Main.storyboard */; };
 		AA3B55581BCB247B004805C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA3B55571BCB247B004805C2 /* Assets.xcassets */; };
 		AA3B555B1BCB247B004805C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3B55591BCB247B004805C2 /* LaunchScreen.storyboard */; };
+		AA3B55631BCB251A004805C2 /* GMP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA3B55621BCB251A004805C2 /* GMP.framework */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		AA3B55571BCB247B004805C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA3B555A1BCB247B004805C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA3B555C1BCB247B004805C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA3B55621BCB251A004805C2 /* GMP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GMP.framework; path = frameworks/GMP.framework; sourceTree = "<group>"; };
+		AA3B55641BCB2A20004805C2 /* cposc-api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "cposc-api.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA3B55631BCB251A004805C2 /* GMP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +46,7 @@
 		AA3B553F1BCB247B004805C2 = {
 			isa = PBXGroup;
 			children = (
+				AA3B55621BCB251A004805C2 /* GMP.framework */,
 				AA3B554A1BCB247B004805C2 /* cposc-ios */,
 				AA3B55491BCB247B004805C2 /* Products */,
 			);
@@ -67,6 +72,7 @@
 				AA3B55591BCB247B004805C2 /* LaunchScreen.storyboard */,
 				AA3B555C1BCB247B004805C2 /* Info.plist */,
 				AA3B554B1BCB247B004805C2 /* Supporting Files */,
+				AA3B55641BCB2A20004805C2 /* cposc-api.h */,
 			);
 			path = "cposc-ios";
 			sourceTree = "<group>";
@@ -261,6 +267,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/frameworks",
+				);
 				INFOPLIST_FILE = "cposc-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.evilnode.cposc-ios";
@@ -272,6 +282,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/frameworks",
+				);
 				INFOPLIST_FILE = "cposc-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.evilnode.cposc-ios";
